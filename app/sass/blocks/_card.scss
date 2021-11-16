@@ -1,0 +1,94 @@
+.card {
+    background: $bg;
+    padding: 20px 0;
+    &__link {
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: $active;
+    }
+    &__title {
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 38px;
+        color: $accent;
+        margin-top: 3px;
+        margin-bottom: 25px;
+    }
+    &__box {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    &-item {
+        border-radius: 8px 8px 8px 8px;
+        background: $white;
+        margin-bottom: 28px;
+        max-width: 335px;
+        &__link img {
+            border-radius: 8px 8px 0px 0px;
+            max-width: 100%;
+            object-fit: cover;
+        }
+        &__info {
+            padding: 20px;
+        }
+        &__title {
+            margin: 20px 20px 0;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 21px;
+            color: $active;
+        }
+        &__date {
+            padding-bottom: 20px;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: $text;
+        }
+        &__description {
+            border-top: 4px solid $separator;
+            padding-top: 20px;
+        }
+        &_tablet {
+            display: none;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .card {
+        &__box {
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: stretch;
+            justify-content: center;
+            height: 100%;
+            margin: 0 -20px;
+        }
+        &-item {
+            max-width: 413px;
+            width: 50%;
+            margin: 20px;
+            align-items: stretch;
+            &_tablet {
+                display: block;
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .card {
+        &-item {
+            max-width: 413px;
+            width: 33.333%;
+        }
+    }
+}
+

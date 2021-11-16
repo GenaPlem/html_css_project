@@ -1,0 +1,92 @@
+.cases {
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__box {
+        max-width: 456px;
+        padding: 0 1px 1px;
+        &:first-of-type .cases__item {
+            border-radius: 12px 12px 0 0;
+        }
+        &:last-of-type .cases__item {
+            border-radius: 0 0 12px 12px;
+        }
+        &:hover .cases__item{
+            background-color: $bg_alt;
+        }
+    }
+    &__item {
+        background-color: $bg;
+        height: 100%;
+    }
+    &__item a {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 20px;
+        height: 100%;
+    }
+    &__description {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
+        color: $main_soft;
+        padding-bottom: 10px;
+    }
+    &__title {
+        font-size: 18px;
+        line-height: 26px;
+        color: #B3B3BA;
+    }
+}
+
+@media (min-width: 768px) {
+    .cases {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: stretch;
+        &__box {
+            width: 50%;
+            max-width: 445px;
+            &:first-of-type .cases__item {
+                border-radius: 12px 0 0 0;
+            }
+            &:last-of-type  .cases__item {
+                border-radius: 0 0 12px 0;
+            }
+            &:nth-of-type(2) .cases__item {
+                border-radius: 0 12px 0 0;
+            }
+            &:nth-of-type(5) .cases__item {
+                border-radius: 0 0 0 12px;
+            }
+        }
+        &__description {
+            font-size: 24px;
+            line-height: 28px;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .cases {
+        &__box {
+            max-width: 440px;
+            width: 33.333%;
+            &:nth-of-type(2) .cases__item {
+                border-radius: 0;
+            }
+            &:nth-of-type(5) .cases__item {
+                border-radius: 0;
+            }
+            &:nth-of-type(3) .cases__item {
+                border-radius: 0 12px 0 0;
+            }
+            &:nth-of-type(4) .cases__item {
+                border-radius: 0 0 0 12px;
+            }
+        }
+    }
+}
