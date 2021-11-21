@@ -2,7 +2,10 @@
     background-color: $bg;
     font-size: 16px;
     text-align: center;
-
+    & a:hover {
+        color: $accent;
+        transition-duration: 0.2s;
+    }
     &-box {
         border-top: 4px solid $separator;
         padding: 20px 0 120px;
@@ -10,10 +13,11 @@
     &__address {
         line-height: 19px;
         color: $main;
-        font-weight: 700;
+        font-weight: 500;
         padding-bottom: 10px;
     }
     &__map a {
+        font-weight: bold;
         font-size: 12px;
         line-height: 14px;
         text-align: center;
@@ -22,10 +26,13 @@
         color: $active;
     }
     &__fb {
-        text-transform: uppercase;
+        & a :hover path {
+            fill: $accent;
+            transition-duration: 0.2s;
+        }
     }
     &__tel a {
-        font-weight: 700;  //нужен другой шрифт.
+        font-weight: 700;
         line-height: 19px;
         color: $main_alt;
     }
@@ -47,22 +54,70 @@
 }
 
 @media (min-width: 768px) {
-    .footer__info {
-        display: flex;
-        justify-content: center;
-    }
-    .footer__links {
-        display: flex;
-        justify-content: center;
+    .footer {
+        &__fb {
+            position: relative;
+            margin-right: 20px;
+            &::after {
+                content: "";
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background-color: $text;
+                position: absolute;
+                right: -16px;
+                top: 18px;
+            }
+        }
+        &__tel {
+            position: relative;
+            margin-right: 26px;
+            &::after {
+                content: "";
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background-color: $text;
+                position: absolute;
+                right: -16px;
+                top: 7px;
+            }
+        }
+        &__address {
+            position: relative;
+            margin-right: 26px;
+            &::after {
+                content: "";
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background-color: $text;
+                position: absolute;
+                right: -16px;
+                top: 8px;
+            }
+        }
+        &__info {
+            display: flex;
+            justify-content: center;
+        }
+        &-box {
+            padding: 30px 0 120px;
+        }
+        &__links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     }
 }
 
 @media (min-width: 992px) {
-    .footer-box {
-        display: grid;
-        grid-template: 1fr auto / 1fr auto;
-    }
     .footer {
+        &-box {
+            display: grid;
+            grid-template: 1fr auto / 1fr auto;
+        }
         &__copyright {
             grid-row: 1 / -1;
             grid-column-start: 2;

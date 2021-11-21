@@ -1,0 +1,23 @@
+.btn {
+    background-color: $active;
+    border: none;
+    padding: 16px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: $white;
+    width: 250px;
+    box-shadow: 0px 0px 20px rgba(36, 163, 255, 0.5);
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    &:hover {
+        background-color: $hover;
+        transition-duration: 0.3s;
+    }
+    &:active {
+        background-color: $active_active;
+    }
+}

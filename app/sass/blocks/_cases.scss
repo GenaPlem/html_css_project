@@ -1,10 +1,10 @@
 .cases {
-    margin: 30px 0;
+    margin: 60px 0 87px;
     display: flex;
     flex-direction: column;
     align-items: center;
     &__box {
-        max-width: 456px;
+        max-width: 335px;
         padding: 0 1px 1px;
         &:first-of-type .cases__item {
             border-radius: 12px 12px 0 0;
@@ -14,18 +14,20 @@
         }
         &:hover .cases__item{
             background-color: $bg_alt;
+            transition-duration: 0.2s;
         }
     }
     &__item {
         background-color: $bg;
         height: 100%;
-    }
-    &__item a {
-        display: inline-flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 20px;
-        height: 100%;
+        & a {
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+            height: 100%;
+            width: 100%;
+        }
     }
     &__description {
         font-weight: 500;
@@ -35,6 +37,7 @@
         padding-bottom: 10px;
     }
     &__title {
+        font-weight: normal;
         font-size: 18px;
         line-height: 26px;
         color: #B3B3BA;
@@ -43,10 +46,14 @@
 
 @media (min-width: 768px) {
     .cases {
+        margin: 97px 0 108px;
         flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
         align-items: stretch;
+        &_about-us {
+            margin: 60px 0 60px;
+        }
         &__box {
             width: 50%;
             max-width: 445px;
@@ -66,6 +73,7 @@
         &__description {
             font-size: 24px;
             line-height: 28px;
+            max-width: 305px;
         }
     }
 }

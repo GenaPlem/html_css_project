@@ -1,0 +1,108 @@
+.services {
+    padding-top: 40px;
+    &__link {
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: $white;
+        opacity: 0.5;
+        &:hover {
+            color: $accent;
+            opacity: 1;
+            transition-duration: 0.2s;
+        &:hover .arrow::before,.arrow::after {
+            background-color: $accent;
+            transition-duration: 0.2s;
+            }
+        }
+    }
+    &__title {
+        font-size: 32px;
+        line-height: 38px;
+        color: $accent;
+    }
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-content: center;
+        margin: 0 -20px;
+    }
+    &__box {
+        padding: 20px 0;
+    }
+    &-item {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        max-width: 335px;
+        &__pic {
+            margin-right: 10px;
+        }
+        &__link {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 21px;
+            color: $active;
+            max-width: 260px;
+        }
+        &__description {
+            font-size: 16px;
+            line-height: 22px;
+            color: $white;
+            margin-top: 10px;
+        }
+    }
+    & a:hover {
+        color: $accent;
+        transition-duration: 0.2s;
+    }
+    &__btn {
+        text-align: center;
+        padding-bottom: 507px;
+    }
+}
+
+@media (min-width: 768px) {
+    .services {
+        padding-top: 58px;
+        &__items {
+            flex-direction: row;
+        }
+        &-item {
+            flex-direction: column;
+            align-items: flex-start;
+            max-width: 413px;
+            &__link {
+                margin-top: 20px;
+                max-width: 401px;
+                font-size: 24px;
+                line-height: 28px;
+            }
+            &__description {
+                font-size: 18px;
+                line-height: 26px;
+            }
+        }
+        &__box {
+            width: 50%;
+            padding: 52px 20px 10px;
+        }
+        &__title{
+            font-size: 42px;
+            line-height: 50px;
+            padding-bottom: 20px;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .services {
+        &__box {
+            width: 33.333%;
+        }
+    }
+}
+

@@ -1,0 +1,29 @@
+.arrow {
+    position: absolute;
+    transform: rotate(45deg);
+    display: inline-block;
+    vertical-align: middle;
+    &::after {
+        content: "";
+        width: 7px;
+        height: 2px;
+        position: absolute;
+        right: -15px;
+        top: 0px;
+        background-color: $active;
+    }
+    &::before {
+        content: "";
+        width: 2px;
+        height: 7px;
+        position: absolute;
+        right: -15px;
+        top: -0px;
+        background-color: $active;
+    }
+    &_white {
+        &::after,&::before {
+            background-color: $white;
+        }
+    }
+}

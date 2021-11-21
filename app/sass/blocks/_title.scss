@@ -1,0 +1,33 @@
+.title {
+    position: relative;
+    background: url(../../img/p.svg) calc(50% - 74px) calc(100% + 63px) no-repeat;
+    &__title {
+        padding: 138px 0 263px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 38px;
+        line-height: 45px;
+        text-align: center;
+        color: $white;
+    }
+    &__link {
+        position: absolute;
+        bottom: 19px;
+        left: calc(50% - 21px);
+        width: 42px;
+        height: 42px;
+        &:hover path, &:hover circle{
+            stroke: black;
+            transition-duration: 0.2s;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .title {
+        background: url(../../img/p.svg) calc(50% - 78px) calc(100% + 1px) no-repeat, url(../../img/p_bg.svg) center bottom no-repeat;
+        &__title {
+            padding: 232px 0 352px;
+        }
+    }
+}

@@ -1,15 +1,9 @@
 .header {
-    padding-top: 50px;
-    background-image: url(../../img/p.svg);
-    background-position: bottom center;
-    background-repeat: no-repeat;
+    padding-top: 20px;
     display: grid;
     grid-template-rows: auto auto;
     grid-template-columns: 1fr auto;
     align-items: center;
-    &__bg {
-        background: linear-gradient(42.01deg, #323264 14.33%, #323264 51.39%, #7A425E 87.53%);
-    }
     &__info {
         grid-column: 1 / -1;
         display: flex;
@@ -19,6 +13,37 @@
     }
     &__logo-box {
         margin: 10px 0;
+    }
+    &__logo-link {
+        margin-left: 8px;
+        font-size: 19px;
+        line-height: 22px;
+        color: $main;
+        vertical-align: top;
+        position: relative;
+        &_white {
+            color: $white;
+        }
+        &:hover {
+            color: $accent;
+            transition-duration: 0.3s;
+        }
+        &::before {
+            content: "";
+            background-image: url(../../img/link-slash-min.svg);
+            width: 11px;
+            height: 24px;
+            position: absolute;
+            left: -10px;
+        }
+        &::after {
+            content: "";
+            background-image: url(../../img/link-p-min.svg);
+            width: 22px;
+            height: 24px;
+            position: absolute;
+            right: -22px;
+        }
     }
     &__address,
     &__fb {
@@ -38,38 +63,86 @@
     }
     &__lang-item:hover {
         background-color: $bg_alt;
+        transition-duration: 0.2s;
     }
     &__lang-item.active {
         background-color: $accent;
     }
     &__address {
+        margin: 0 30px 0 18px;
+        position: relative;
         font-size: 16px;
         line-height: 19px;
         text-align: right;
         color: $white;
+        &::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: $separator;
+            position: absolute;
+            left: -13px;
+            top: 8px;
+        }
+        &::after {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: $separator;
+            position: absolute;
+            right: -16px;
+            top: 8px;
+        }
     }
     &__tel {
-        // margin: 0 26px 0 30px;
         font-weight: bold;
         font-size: 16px;
         line-height: 19px;
         text-align: right;
         color: $white;
+        &:hover {
+            color: $accent;
+            transition-duration: 0.2s;
+        }
     }
-    &__fb a {
+    &__fb {
+        margin-left: 26px;
+        position: relative;
+        & a {
         display: inline-block;
         vertical-align: middle;
         width: 24px;
         height: 24px;
-    }
-    &__fb:hover path {
-        fill: $white;
+            &:hover path {
+                fill: $white;
+                transition-duration: 0.2s;
+            }
+        }
+        &::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: $separator;
+            position: absolute;
+            left: -16px;
+            top: 10px;
+        }
     }
     &__burger {
         border: none;
         background-color: inherit;
         cursor: pointer;
         padding: 0;
+        border-radius: 12px;
+        width: 32px;
+        height: 32px;
+        &:hover {
+            background-color: $bg_alt;
+            transition-duration: 0.3s;
+        }
     }
     &__menu-link {
         display: none;
@@ -84,16 +157,54 @@
         text-align: right;
         color: $white;
         margin-left: 16px;
+        &:hover {
+            color: $accent;
+            transition-duration: 0.2s;
+        }
+        &.active {
+            border-bottom: 2px solid $white;
+            &:hover {
+                border-color: $accent;
+                transition-duration: 0.2s;
+            }
+        }
     }
-    &__title {
-        margin: 138px 0 313px;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 38px;
-        line-height: 45px;
-        text-align: center;
-        color: $white;
-        grid-column: -3 / -1;
+    &_dark {
+        .header {
+            &__lang-item,
+            &__address,
+            &__tel {
+                color: $text;
+            }
+            &__lang-item.active {
+                color: $white;
+            }
+            &__fb a:hover path {
+                fill: $active;
+                transition-duration: 0.2s;
+            }
+            &__menu-link a {
+                color: $active;
+                &:hover {
+                    color: $accent;
+                    transition-duration: 0.2s;
+                }
+                &.active {
+                    color: $accent;
+                    border-bottom: 2px solid $accent;
+                    &:hover {
+                        border-color: $accent;
+                        transition-duration: 0.2s;
+                    }
+                }
+            }
+            &__tel {
+                &:hover {
+                    color: $accent;
+                    transition-duration: 0.2s;
+                }
+            }
+        }
     }
 }
 
@@ -103,6 +214,7 @@
         grid-template-columns: auto;
         &__info {
             justify-content: flex-start;
+            margin-bottom: 0;
         }
         &__address,
         &__fb {
@@ -113,6 +225,7 @@
         }
         &__menu-link {
             display: flex;
+            margin-top: 0;
         }
         &__menu-link a {
             margin-right: 16px;
@@ -124,11 +237,31 @@
             line-height: 45px;
             grid-column: -2 / -1;
         }
+        &__logo-link {
+            font-size: 38px;
+            line-height: 45px;
+            margin-left: 24px;
+            &::before {
+                background-image: url(../../img/link-slash.svg);
+                width: 22px;
+                height: 47px;
+                position: absolute;
+                left: -21px;
+            }
+            &::after {
+                background-image: url(../../img/link-p.svg);
+                width: 42px;
+                height: 47px;
+                position: absolute;
+                right: -46px;
+            }
+        }
     }
 }
 
 @media (min-width: 992px) {
     .header {
+        padding-top: 50px;
         grid-template-rows: auto auto;
         grid-template-columns: auto 1fr;
         &__info {

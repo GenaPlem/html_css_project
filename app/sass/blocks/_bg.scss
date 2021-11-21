@@ -1,0 +1,37 @@
+.bg {
+    &__soft {
+        background: $soft;
+    }
+    &__supersoft {
+        background: $supersoft;
+        border-radius: 0 0 12px 12px;
+        position: relative;
+        &::after,&::before {
+            content: "";
+            height: 10px;
+            position: absolute;
+            border-radius: 0 0 12px 12px;
+        }
+        &::after {
+            left: 20px;
+            right: 20px;
+            bottom: -10px;
+            background-color: #CACADB;
+        }
+        &::before {
+            background-color: #E7E7F2;
+            left: 40px;
+            right: 40px;
+            bottom: -20px;
+        }
+        &_services {
+            background: url(../../img/services_bg.jpg) top center / 100% 500px no-repeat, $supersoft;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .bg__supersoft_services {
+        background: url(../../img/services_bg_big.jpg) top center / 100% 500px no-repeat, $supersoft;
+    }
+}
