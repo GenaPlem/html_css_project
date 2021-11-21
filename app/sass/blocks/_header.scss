@@ -117,7 +117,7 @@
         height: 24px;
             &:hover path {
                 fill: $white;
-                transition-duration: 0.2s;
+                transition-duration: 0.3s;
             }
         }
         &::before {
@@ -142,16 +142,6 @@
         &:hover {
             background-color: $bg_alt;
             transition-duration: 0.3s;
-        }
-    }
-    &-menu {
-        &__mobile {
-            max-width: 375px;
-        }
-        &-link {
-            max-width: 100%;
-            padding: 9px;
-            text-align: center;
         }
     }
     &__menu-link {
