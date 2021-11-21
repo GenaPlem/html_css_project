@@ -1,0 +1,46 @@
+.menu {
+    display: none;
+    width: 100%;
+    max-width: 767px;
+    background-color: $white;
+    border-radius: 12px;
+    position: fixed;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%);
+    padding: 64px 20px 10px;
+    &__link {
+        max-width: 100%;
+        text-align: center;
+        padding: 10px;
+        background-color: $bg;
+        margin: 10px 0;
+        border-radius: 12px;
+        display: block;
+        font-size: 24px;
+        line-height: 28px;
+        color: $active;
+        &:hover {
+            background-color: $bg_alt;
+        }
+        &.active {
+            color: $accent;
+        }
+    }
+    &__close {
+        border: none;
+        background-color: inherit;
+        position: absolute;
+        right: 16px;
+        top: 16px;
+        cursor: pointer;
+        border-radius: 12px;
+        padding: 0;
+        width: 32px;
+        height: 32px;
+        &:hover {
+            background-color: $bg_alt;
+            transition-duration: 0.3s;
+        }
+    }
+}

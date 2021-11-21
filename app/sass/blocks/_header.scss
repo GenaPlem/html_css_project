@@ -144,6 +144,16 @@
             transition-duration: 0.3s;
         }
     }
+    &-menu {
+        &__mobile {
+            max-width: 375px;
+        }
+        &-link {
+            max-width: 100%;
+            padding: 9px;
+            text-align: center;
+        }
+    }
     &__menu-link {
         display: none;
         list-style: none;
